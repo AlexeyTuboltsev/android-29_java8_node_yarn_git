@@ -40,12 +40,6 @@ CMD /opt/tools/entrypoint.sh built-in
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN apt-get update -qq \
- && apt-get install -qq --no-install-recommends git \
- && apt-get install -qq --no-install-recommends wget \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
-
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -\
